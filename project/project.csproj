@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F68E0E86-133E-439E-828A-83279C64D5F5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>project</RootNamespace>
+    <AssemblyName>project</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.19.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Development\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="all\authForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="all\authForm.Designer.cs">
+      <DependentUpon>authForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\sql.cs" />
+    <Compile Include="Class\variables.cs" />
+    <Compile Include="runner\contactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="runner\contactForm.Designer.cs">
+      <DependentUpon>contactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sponsor\infoCharity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sponsor\infoCharity.Designer.cs">
+      <DependentUpon>infoCharity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="all\listCharity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="all\listCharity.Designer.cs">
+      <DependentUpon>listCharity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="admin\menuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="admin\menuAdmin.Designer.cs">
+      <DependentUpon>menuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="coordinator\menuCoordinator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="coordinator\menuCoordinator.Designer.cs">
+      <DependentUpon>menuCoordinator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="all\moreInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="all\moreInfo.Designer.cs">
+      <DependentUpon>moreInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="runner\menuRunner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="runner\menuRunner.Designer.cs">
+      <DependentUpon>menuRunner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="runner\registerRunner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="runner\registerRunner.Designer.cs">
+      <DependentUpon>registerRunner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="runner\beRunner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="runner\beRunner.Designer.cs">
+      <DependentUpon>beRunner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="all\Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="all\Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sponsor\sponsorRunner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sponsor\sponsorRunner.Designer.cs">
+      <DependentUpon>sponsorRunner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sponsor\thxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sponsor\thxForm.Designer.cs">
+      <DependentUpon>thxForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="all\authForm.resx">
+      <DependentUpon>authForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="runner\contactForm.resx">
+      <DependentUpon>contactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sponsor\infoCharity.resx">
+      <DependentUpon>infoCharity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="all\listCharity.resx">
+      <DependentUpon>listCharity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="all\Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="admin\menuAdmin.resx">
+      <DependentUpon>menuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="coordinator\menuCoordinator.resx">
+      <DependentUpon>menuCoordinator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="all\moreInfo.resx">
+      <DependentUpon>moreInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="runner\menuRunner.resx">
+      <DependentUpon>menuRunner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="runner\registerRunner.resx">
+      <DependentUpon>registerRunner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="runner\beRunner.resx">
+      <DependentUpon>beRunner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sponsor\sponsorRunner.resx">
+      <DependentUpon>sponsorRunner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sponsor\thxForm.resx">
+      <DependentUpon>thxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\resources\vopros.png" />
+    <Content Include="MetroFramework.txt" />
+    <None Include="resources\charity\wwsm-rescue-logo.png" />
+    <None Include="resources\charity\upbeat-logo.png" />
+    <None Include="resources\charity\the-red-cross-logo.png" />
+    <None Include="resources\charity\stay-pumped-logo.png" />
+    <None Include="resources\charity\save-the-children-fund-logo.png" />
+    <None Include="resources\charity\querstadtein-logo.png" />
+    <None Include="resources\charity\oxfam-international-logo.png" />
+    <None Include="resources\charity\human-rights-centre-logo.png" />
+    <None Include="resources\charity\heart-health-sao-paulo-logo.png" />
+    <None Include="resources\charity\diabetes-brazil-logo.png" />
+    <None Include="resources\charity\conquer-cancer-brazil.png" />
+    <None Include="resources\charity\clara-santos-oliveira-institute-logo.png" />
+    <None Include="resources\charity\aves-do-brazil-logo.png" />
+    <None Include="resources\charity\arise-logo.png" />
+    <None Include="resources\vopros.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
