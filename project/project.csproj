@@ -71,6 +71,12 @@
     </Compile>
     <Compile Include="Class\sql.cs" />
     <Compile Include="Class\variables.cs" />
+    <Compile Include="regMarathon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="regMarathon.Designer.cs">
+      <DependentUpon>regMarathon.cs</DependentUpon>
+    </Compile>
     <Compile Include="runner\contactForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     <EmbeddedResource Include="all\authForm.resx">
       <DependentUpon>authForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="regMarathon.resx">
+      <DependentUpon>regMarathon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="runner\contactForm.resx">
       <DependentUpon>contactForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +219,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\resources\vopros.png" />
+    <None Include="bin\Debug\resources\calendar.png" />
     <Content Include="MetroFramework.txt" />
     <None Include="resources\charity\wwsm-rescue-logo.png" />
     <None Include="resources\charity\upbeat-logo.png" />

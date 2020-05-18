@@ -151,6 +151,7 @@
             this.metroButton5.Style = MetroFramework.MetroColorStyle.Black;
             this.metroButton5.TabIndex = 13;
             this.metroButton5.Text = "Регистрация на марафон";
+            this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
             // metroButton6
             // 

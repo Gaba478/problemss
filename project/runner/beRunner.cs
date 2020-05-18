@@ -121,5 +121,30 @@ namespace project
             checkClose = false;
             this.Close();
         }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            if (variables.gUserLogin == "" || variables.gUserLogin == null)
+            {
+                registerRunner rRun = new registerRunner();
+                rRun.Show(); 
+                checkClose = false;
+                this.Close();
+            }
+            else
+            {
+                if (MessageBox.Show("Вы уже авторизованы в системе.\nДля продолжения выйдите с своего аккаунта.\nВыйти?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) 
+                {
+                    variables.gUserId = "";
+                    variables.gUserLogin = "";
+                    variables.gUserPassword = "";
+                    variables.gUserRole = "";
+                    registerRunner rRun = new registerRunner();
+                    rRun.Show();
+                    checkClose = false;
+                    this.Close();
+                }
+            }            
+        }
     }
 }

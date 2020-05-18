@@ -86,5 +86,13 @@ namespace project
             contactForm cF = new contactForm();
             if (cF.ShowDialog() == DialogResult.OK) { }
         }
+
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            regMarathon rM = new regMarathon();
+            rM.Show();
+            checkClose = false;
+            this.Close();
+        }
     }
 }

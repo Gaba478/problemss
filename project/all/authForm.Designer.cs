@@ -149,6 +149,7 @@
             this.mailTextBox.Name = "mailTextBox";
             this.mailTextBox.Size = new System.Drawing.Size(162, 23);
             this.mailTextBox.TabIndex = 12;
+            this.mailTextBox.Text = "a.adkin@dayrep.net";
             // 
             // passTextBox
             // 
@@ -159,6 +160,7 @@
             this.passTextBox.PasswordChar = '●';
             this.passTextBox.Size = new System.Drawing.Size(162, 23);
             this.passTextBox.TabIndex = 13;
+            this.passTextBox.Text = "jwZh2x@p";
             this.passTextBox.UseSystemPasswordChar = true;
             // 
             // logBut

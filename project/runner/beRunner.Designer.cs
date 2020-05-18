@@ -65,6 +65,7 @@
             this.metroButton2.Style = MetroFramework.MetroColorStyle.Black;
             this.metroButton2.TabIndex = 1;
             this.metroButton2.Text = "Я новый участник";
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // logBut
             // 
