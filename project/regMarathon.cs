@@ -128,10 +128,9 @@ namespace project
         private void cashBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-            if (!Char.IsDigit(number) && number != 8) // цифры и клавиша BackSpace
-            {
-                e.Handled = true;
-            }
+            // цифры и клавиша BackSpace
+            if (!Char.IsDigit(number) && number != 8) e.Handled = true;
+            if (cashBox.Text.Length == 0) if (e.KeyChar == '0') e.Handled = true;            
         }
 
         private void metroCheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -140,10 +139,8 @@ namespace project
             if (metroCheckBox1.Checked) cashDef += 145;
             else
             {
-                if (cashDef <= 145)
-                    cashDef = 0;
-                else
-                    cashDef -= 145;
+                if (cashDef <= 145) cashDef = 0;
+                else cashDef -= 145;
             }
             cash += cashDef;
             cashL.Text = cash.ToString() + "$";
@@ -155,10 +152,8 @@ namespace project
             if (metroCheckBox2.Checked) cashDef += 75;
             else
             {
-                if (cashDef <= 75)
-                    cashDef = 0;
-                else
-                    cashDef -= 75;
+                if (cashDef <= 75) cashDef = 0;
+                else cashDef -= 75;
             }
             cash += cashDef;
             cashL.Text = cash.ToString() + "$";
@@ -170,10 +165,8 @@ namespace project
             if (metroCheckBox3.Checked) cashDef += 20;
             else
             {
-                if (cashDef <= 20)
-                    cashDef = 0;
-                else
-                    cashDef -= 20;
+                if (cashDef <= 20) cashDef = 0;
+                else cashDef -= 20;
             }
             cash += cashDef;
             cashL.Text = cash.ToString() + "$";
@@ -186,10 +179,8 @@ namespace project
             if (metroRadioButton2.Checked) cashDef += 20;
             else
             {
-                if (cashDef <= 20)
-                    cashDef = 0;
-                else
-                    cashDef -= 20;
+                if (cashDef <= 20) cashDef = 0;
+                else cashDef -= 20;
             }
             cash += cashDef;
             cashL.Text = cash.ToString() + "$";
@@ -201,25 +192,35 @@ namespace project
             if (metroRadioButton3.Checked) cashDef += 45;
             else
             {
-                if (cashDef <= 45)
-                    cashDef = 0;
-                else
-                    cashDef -= 45;
+                if (cashDef <= 45) cashDef = 0;
+                else cashDef -= 45;
             }
             cash += cashDef;
             cashL.Text = cash.ToString() + "$";
         }
 
-        private void cashBox_Leave(object sender, EventArgs e)
+        private void cashBox_KeyUp(object sender, KeyEventArgs e)
         {
             try
-            {
+            {                
                 cash -= cashFee;
-                cashFee = Convert.ToInt32(cashBox.Text);
+                if (cash <= 0) cash = 0;
+                if (cashBox.Text.Length == 0) cashFee = 0;
+                try { cashFee = Convert.ToInt32(cashBox.Text); }
+                catch (Exception ex) { }                
                 cash += cashFee;
                 cashL.Text = cash.ToString() + "$";
             }
-            catch (Exception ex) { cashBox.Text = "0"; }
+            catch (Exception ex) { cashBox.Text = ""; }
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            if (!metroCheckBox1.Checked && !metroCheckBox2.Checked && !metroCheckBox3.Checked) { MessageBox.Show("Вы не выбрали ни одного марафона!"); return; }
+            thxRegRun tRR = new thxRegRun();
+            tRR.Show();
+            checkClose = false;
+            this.Close();
         }
     }
 }

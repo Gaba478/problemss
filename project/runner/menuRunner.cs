@@ -94,5 +94,13 @@ namespace project
             checkClose = false;
             this.Close();
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            updateForm uF = new updateForm();
+            uF.Show();
+            checkClose = false;
+            this.Close();
+        }
     }
 }

@@ -279,7 +279,7 @@
             this.cashBox.Text = "0";
             this.cashBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cashBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cashBox_KeyPress);
-            this.cashBox.Leave += new System.EventHandler(this.cashBox_Leave);
+            this.cashBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.cashBox_KeyUp);
             // 
             // label6
             // 
@@ -340,6 +340,7 @@
             this.metroButton1.Style = MetroFramework.MetroColorStyle.Black;
             this.metroButton1.TabIndex = 26;
             this.metroButton1.Text = "Регистрация";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroButton2
             // 

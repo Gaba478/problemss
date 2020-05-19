@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Text.RegularExpressions;
-
+using System.IO;
 
 namespace project
 {
@@ -18,6 +18,7 @@ namespace project
         TimeSpan tS = new TimeSpan();
         DateTime dT = new DateTime();
         bool checkClose = true;
+        string tempPhoto;
         public registerRunner()
         {
             InitializeComponent();
@@ -118,6 +119,7 @@ namespace project
             {
                 pictureBox1.Load(openFileDialog1.FileName);
                 photoBox.Text = openFileDialog1.SafeFileName;
+                tempPhoto = openFileDialog1.FileName;
             }
         }
 
@@ -172,11 +174,21 @@ namespace project
                         "insert into runner (`Email`, `Gender`, `DateOfBirth`, `CountryCode`, `photo`) values (" +
                         "'" + mailBox.Text + "', " +
                         "'" + genderBox.SelectedItem + "', " +
-                        "'" + dateTimePicker1.Value + "', " +
+                        "'" + dateTimePicker1.Value.Year + "-" + dateTimePicker1.Value.Month + "-" + dateTimePicker1.Value.Day + "', " +
                         "(SELECT `CountryCode` FROM `country` WHERE `CountryName` = '" + countryBox.SelectedItem + "'), " +
                         "'" + photoBox.Text + "');"
                         , variables.conn);
                         variables.cmd.ExecuteNonQuery();
+
+                        Directory.CreateDirectory("resources\\" + mailBox.Text);
+                        string justFun = "resources\\" + mailBox.Text + "\\" + photoBox.Text;
+                        FileInfo fileInfo = new FileInfo(tempPhoto);
+                        fileInfo.CopyTo(justFun);
+
+                        menuRunner mR = new menuRunner("registerRunner");
+                        mR.Show();
+                        checkClose = false;
+                        this.Close();
                     }
                     catch (Exception ex) { MessageBox.Show(ex.Message); }
                 }

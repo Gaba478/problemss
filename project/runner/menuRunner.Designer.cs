@@ -114,6 +114,7 @@
             this.metroButton1.Style = MetroFramework.MetroColorStyle.Black;
             this.metroButton1.TabIndex = 9;
             this.metroButton1.Text = "Редактирование профиля";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroButton2
             // 
