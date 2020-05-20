@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace project
 {
@@ -17,6 +18,7 @@ namespace project
         TimeSpan tS = new TimeSpan();
         DateTime dT = new DateTime();
         bool checkClose = true;
+        bool checkImage = false;
         string tempPhoto;
         public updateForm()
         {
@@ -73,7 +75,8 @@ namespace project
                     dateTimePicker1.Value = variables.reader.GetDateTime("DateOfBirth");
                     countryBox.SelectedItem = variables.reader.GetString("CountryName");
                     photoBox.Text = variables.reader.GetString("photo");
-                    FileInfo f = new FileInfo("resources\\" + variables.gUserLogin + "\\" + photoBox.Text);
+                    tempPhoto = "resources\\" + variables.gUserLogin + "\\" + photoBox.Text;
+                    FileInfo f = new FileInfo(tempPhoto);
                     if (f.Exists) { pictureBox1.Load(f.FullName); photoBox.Text = f.Name; }
                     else { pictureBox1.Load("resources\\none.png"); photoBox.Text = "none"; }
                 }
@@ -123,10 +126,64 @@ namespace project
 
         private void updateRunBut_Click(object sender, EventArgs e)
         {
-            menuRunner mR = new menuRunner("updateForm");
-            mR.Show();
-            checkClose = false;
-            this.Close();
+            int count = 0;
+            if (passBox.Text != null || passBox.Text != "")
+            {
+                if (passBox.Text.Length < 6) { MessageBox.Show("Длина пароля должны быть не меньше 6 символов."); return; }
+                if (!passBox.Text.Any(c => char.IsUpper(c))) { MessageBox.Show("В пароле нет заглавной буквы."); return; }
+                if (!passBox.Text.Any(c => char.IsDigit(c))) { MessageBox.Show("В пароле нет цифры."); return; }
+                Regex r = new Regex(@"[!@#$%^]");
+                Match m = r.Match(passBox.Text);
+                while (m.Success) { count++; m = m.NextMatch(); }
+                if (count == 0) { MessageBox.Show("В пароле нет ни одного из следующих символов: ! @ # $ % ^"); return; }
+                if (passBox.Text != rPassBox.Text) { MessageBox.Show("Пароли не совпадают."); return; }
+                variables.gUserPassword = passBox.Text;
+            }            
+            if (nameBox.Text == "") { MessageBox.Show("Вы не указали своё имя."); return; }
+            if (famBox.Text == "") { MessageBox.Show("Вы не указали свою фамилию."); return; }
+            if (genderBox.SelectedItem == null) { MessageBox.Show("Вы не указали свой пол."); return; }
+            if (photoBox.Text == "") { MessageBox.Show("Вы не загрузили фотографию."); return; }
+            if (countryBox.SelectedItem == null) { MessageBox.Show("Вы не указали свою страну."); return; }
+            updateRunner();            
+        }
+
+        void updateRunner()
+        {
+            try
+            {
+                sql.GetDBConnection();
+                variables.cmd = new MySqlCommand("update user, runner set " +
+                    "user.Password = '" + variables.gUserPassword + "', " +
+                    "user.FirstName = '" + nameBox.Text + "', " +
+                    "user.LastName = '" + famBox.Text + "', " +
+                    "runner.Gender = '" + genderBox.SelectedItem + "', " +
+                    "runner.DateOfBirth = '" + dateTimePicker1.Value.Year + "-" + dateTimePicker1.Value.Month + "-" + dateTimePicker1.Value.Day + "', " +
+                    "runner.CountryCode = (select CountryCode from country where CountryName = '" + countryBox.SelectedItem + "'), " +
+                    "runner.photo = '" + photoBox.Text + "' " +
+                    "where user.Email = '" + variables.gUserLogin + "';", variables.conn);
+                variables.cmd.ExecuteNonQuery();
+
+                DirectoryInfo directoryInfo = new DirectoryInfo("resources\\" + variables.gUserLogin);
+                FileInfo fileInfo = new FileInfo(tempPhoto);
+                string justFun = "resources\\" + variables.gUserLogin + "\\" + photoBox.Text;
+                if (directoryInfo.Exists)
+                {
+                    if (checkImage)
+                        fileInfo.CopyTo(justFun);
+                }
+                else
+                {
+                    directoryInfo.Create();
+                    if (fileInfo.Exists) fileInfo.CopyTo(justFun);
+                }    
+
+                menuRunner mR = new menuRunner("updateForm");
+                mR.Show();
+                checkClose = false;
+                this.Close();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            variables.conn.Close();
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -135,6 +192,8 @@ namespace project
             {
                 pictureBox1.Load(openFileDialog1.FileName);
                 photoBox.Text = openFileDialog1.SafeFileName;
+                tempPhoto = openFileDialog1.FileName;
+                checkImage = true;
             }
         }
     }

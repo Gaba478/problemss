@@ -113,6 +113,7 @@
             this.metroButton5.Style = MetroFramework.MetroColorStyle.Black;
             this.metroButton5.TabIndex = 15;
             this.metroButton5.Text = "Пользователи";
+            this.metroButton5.Click += new System.EventHandler(this.metroButton5_Click);
             // 
             // metroButton1
             // 

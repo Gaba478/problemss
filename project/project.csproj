@@ -63,10 +63,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="all\authForm.cs">
+    <Compile Include="Form\all\authForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="all\authForm.Designer.cs">
+    <Compile Include="Form\all\authForm.Designer.cs">
       <DependentUpon>authForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\sql.cs" />
@@ -77,46 +77,46 @@
     <Compile Include="myResult.Designer.cs">
       <DependentUpon>myResult.cs</DependentUpon>
     </Compile>
-    <Compile Include="regMarathon.cs">
+    <Compile Include="Form\runner\regMarathon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="regMarathon.Designer.cs">
+    <Compile Include="Form\runner\regMarathon.Designer.cs">
       <DependentUpon>regMarathon.cs</DependentUpon>
     </Compile>
-    <Compile Include="runner\contactForm.cs">
+    <Compile Include="Form\runner\contactForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="runner\contactForm.Designer.cs">
+    <Compile Include="Form\runner\contactForm.Designer.cs">
       <DependentUpon>contactForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="sponsor\infoCharity.cs">
+    <Compile Include="Form\sponsor\infoCharity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sponsor\infoCharity.Designer.cs">
+    <Compile Include="Form\sponsor\infoCharity.Designer.cs">
       <DependentUpon>infoCharity.cs</DependentUpon>
     </Compile>
-    <Compile Include="all\listCharity.cs">
+    <Compile Include="Form\all\listCharity.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="all\listCharity.Designer.cs">
+    <Compile Include="Form\all\listCharity.Designer.cs">
       <DependentUpon>listCharity.cs</DependentUpon>
     </Compile>
-    <Compile Include="admin\menuAdmin.cs">
+    <Compile Include="Form\admin\menuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="admin\menuAdmin.Designer.cs">
+    <Compile Include="Form\admin\menuAdmin.Designer.cs">
       <DependentUpon>menuAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="coordinator\menuCoordinator.cs">
+    <Compile Include="Form\coordinator\menuCoordinator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="coordinator\menuCoordinator.Designer.cs">
+    <Compile Include="Form\coordinator\menuCoordinator.Designer.cs">
       <DependentUpon>menuCoordinator.cs</DependentUpon>
     </Compile>
-    <Compile Include="all\moreInfo.cs">
+    <Compile Include="Form\all\moreInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="all\moreInfo.Designer.cs">
+    <Compile Include="Form\all\moreInfo.Designer.cs">
       <DependentUpon>moreInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -124,84 +124,90 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="runner\menuRunner.cs">
+    <Compile Include="Form\runner\menuRunner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="runner\menuRunner.Designer.cs">
+    <Compile Include="Form\runner\menuRunner.Designer.cs">
       <DependentUpon>menuRunner.cs</DependentUpon>
     </Compile>
-    <Compile Include="runner\registerRunner.cs">
+    <Compile Include="Form\runner\registerRunner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="runner\registerRunner.Designer.cs">
+    <Compile Include="Form\runner\registerRunner.Designer.cs">
       <DependentUpon>registerRunner.cs</DependentUpon>
     </Compile>
-    <Compile Include="runner\beRunner.cs">
+    <Compile Include="Form\runner\beRunner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="runner\beRunner.Designer.cs">
+    <Compile Include="Form\runner\beRunner.Designer.cs">
       <DependentUpon>beRunner.cs</DependentUpon>
     </Compile>
-    <Compile Include="all\Main.cs">
+    <Compile Include="Form\all\Main.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="all\Main.Designer.cs">
+    <Compile Include="Form\all\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sponsor\sponsorRunner.cs">
+    <Compile Include="Form\sponsor\sponsorRunner.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sponsor\sponsorRunner.Designer.cs">
+    <Compile Include="Form\sponsor\sponsorRunner.Designer.cs">
       <DependentUpon>sponsorRunner.cs</DependentUpon>
     </Compile>
-    <Compile Include="sponsor\thxForm.cs">
+    <Compile Include="Form\sponsor\thxForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sponsor\thxForm.Designer.cs">
+    <Compile Include="Form\sponsor\thxForm.Designer.cs">
       <DependentUpon>thxForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="runner\thxRegRun.cs">
+    <Compile Include="Form\runner\thxRegRun.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="runner\thxRegRun.Designer.cs">
+    <Compile Include="Form\runner\thxRegRun.Designer.cs">
       <DependentUpon>thxRegRun.cs</DependentUpon>
     </Compile>
-    <Compile Include="updateForm.cs">
+    <Compile Include="Form\runner\updateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="updateForm.Designer.cs">
+    <Compile Include="Form\runner\updateForm.Designer.cs">
       <DependentUpon>updateForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="all\authForm.resx">
+    <Compile Include="userManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userManagement.Designer.cs">
+      <DependentUpon>userManagement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form\all\authForm.resx">
       <DependentUpon>authForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="myResult.resx">
       <DependentUpon>myResult.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="regMarathon.resx">
+    <EmbeddedResource Include="Form\runner\regMarathon.resx">
       <DependentUpon>regMarathon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="runner\contactForm.resx">
+    <EmbeddedResource Include="Form\runner\contactForm.resx">
       <DependentUpon>contactForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sponsor\infoCharity.resx">
+    <EmbeddedResource Include="Form\sponsor\infoCharity.resx">
       <DependentUpon>infoCharity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="all\listCharity.resx">
+    <EmbeddedResource Include="Form\all\listCharity.resx">
       <DependentUpon>listCharity.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="all\Main.resx">
+    <EmbeddedResource Include="Form\all\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="admin\menuAdmin.resx">
+    <EmbeddedResource Include="Form\admin\menuAdmin.resx">
       <DependentUpon>menuAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="coordinator\menuCoordinator.resx">
+    <EmbeddedResource Include="Form\coordinator\menuCoordinator.resx">
       <DependentUpon>menuCoordinator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="all\moreInfo.resx">
+    <EmbeddedResource Include="Form\all\moreInfo.resx">
       <DependentUpon>moreInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -209,26 +215,29 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="runner\menuRunner.resx">
+    <EmbeddedResource Include="Form\runner\menuRunner.resx">
       <DependentUpon>menuRunner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="runner\registerRunner.resx">
+    <EmbeddedResource Include="Form\runner\registerRunner.resx">
       <DependentUpon>registerRunner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="runner\beRunner.resx">
+    <EmbeddedResource Include="Form\runner\beRunner.resx">
       <DependentUpon>beRunner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sponsor\sponsorRunner.resx">
+    <EmbeddedResource Include="Form\sponsor\sponsorRunner.resx">
       <DependentUpon>sponsorRunner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="sponsor\thxForm.resx">
+    <EmbeddedResource Include="Form\sponsor\thxForm.resx">
       <DependentUpon>thxForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="runner\thxRegRun.resx">
+    <EmbeddedResource Include="Form\runner\thxRegRun.resx">
       <DependentUpon>thxRegRun.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="updateForm.resx">
+    <EmbeddedResource Include="Form\runner\updateForm.resx">
       <DependentUpon>updateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userManagement.resx">
+      <DependentUpon>userManagement.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

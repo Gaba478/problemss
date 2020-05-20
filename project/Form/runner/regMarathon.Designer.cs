@@ -215,6 +215,7 @@
             this.metroRadioButton1.TabStop = true;
             this.metroRadioButton1.Text = "Вариант A (0$): Номер бегуна + \r\nRFID браслет";
             this.metroRadioButton1.UseVisualStyleBackColor = true;
+            this.metroRadioButton1.CheckedChanged += new System.EventHandler(this.metroRadioButton1_CheckedChanged);
             // 
             // metroRadioButton2
             // 

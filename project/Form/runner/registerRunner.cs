@@ -137,7 +137,7 @@ namespace project
             if (passBox.Text != rPassBox.Text) { MessageBox.Show("Пароли не совпадают."); return; }
             if (nameBox.Text == "") { MessageBox.Show("Вы не указали своё имя."); return; }
             if (famBox.Text == "") { MessageBox.Show("Вы не указали свою фамилию."); return; }
-            if (genderBox.SelectedItem == null) { MessageBox.Show("Вы не указали своё пол."); return; }
+            if (genderBox.SelectedItem == null) { MessageBox.Show("Вы не указали свой пол."); return; }
             if (photoBox.Text == "") { MessageBox.Show("Вы не загрузили фотографию."); return; }
             if (countryBox.SelectedItem == null) { MessageBox.Show("Вы не указали свою страну."); return; }
             insertAccount();

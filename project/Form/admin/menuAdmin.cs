@@ -80,5 +80,13 @@ namespace project
             checkClose = false;
             this.Close();
         }
+
+        private void metroButton5_Click(object sender, EventArgs e)
+        {
+            userManagement uA = new userManagement();
+            uA.Show();
+            checkClose = false;
+            this.Close();
+        }
     }
 }
