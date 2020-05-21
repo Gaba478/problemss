@@ -41,16 +41,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.searchBox = new MetroFramework.Controls.MetroTextBox();
             this.updateBut = new MetroFramework.Controls.MetroButton();
             this.userGrid = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.countUserL = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.role = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.countUserL = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userGrid)).BeginInit();
@@ -199,14 +199,14 @@
             this.metroComboBox2.Size = new System.Drawing.Size(121, 29);
             this.metroComboBox2.TabIndex = 17;
             // 
-            // metroTextBox1
+            // searchBox
             // 
-            this.metroTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.searchBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroTextBox1.Location = new System.Drawing.Point(386, 169);
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.Size = new System.Drawing.Size(121, 23);
-            this.metroTextBox1.TabIndex = 18;
+            this.searchBox.Location = new System.Drawing.Point(386, 169);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(121, 23);
+            this.searchBox.TabIndex = 18;
             // 
             // updateBut
             // 
@@ -242,28 +242,6 @@
             this.userGrid.Size = new System.Drawing.Size(520, 183);
             this.userGrid.TabIndex = 20;
             this.userGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.userGrid_CellContentClick);
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label5.Location = new System.Drawing.Point(1, 198);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(167, 23);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Всего пользователей:";
-            // 
-            // countUserL
-            // 
-            this.countUserL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.countUserL.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.countUserL.Location = new System.Drawing.Point(174, 198);
-            this.countUserL.Name = "countUserL";
-            this.countUserL.Size = new System.Drawing.Size(69, 23);
-            this.countUserL.TabIndex = 22;
-            this.countUserL.Text = "1";
             // 
             // name
             // 
@@ -303,6 +281,28 @@
             this.edit.ToolTipText = "Edit";
             this.edit.UseColumnTextForButtonValue = true;
             // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.label5.Location = new System.Drawing.Point(1, 198);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(167, 23);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Всего пользователей:";
+            // 
+            // countUserL
+            // 
+            this.countUserL.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.countUserL.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.countUserL.Location = new System.Drawing.Point(174, 198);
+            this.countUserL.Name = "countUserL";
+            this.countUserL.Size = new System.Drawing.Size(69, 23);
+            this.countUserL.TabIndex = 22;
+            this.countUserL.Text = "1";
+            // 
             // userManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -312,7 +312,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.userGrid);
             this.Controls.Add(this.updateBut);
-            this.Controls.Add(this.metroTextBox1);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.metroComboBox2);
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.label4);
@@ -348,7 +348,7 @@
         private System.Windows.Forms.Label label4;
         private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox searchBox;
         private MetroFramework.Controls.MetroButton updateBut;
         private System.Windows.Forms.DataGridView userGrid;
         private System.Windows.Forms.Label label5;

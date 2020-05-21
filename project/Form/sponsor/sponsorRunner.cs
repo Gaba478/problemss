@@ -153,17 +153,16 @@ namespace project
 
         private void metroButton4_Click(object sender, EventArgs e)
         {
-            int numberCardLenght = numberCardBox.Text.Length;
-            int monthCard = Convert.ToInt32(monthCardBox.Text);
-            int monthCardLenght = monthCardBox.Text.Length;
-            int yearCard = Convert.ToInt32(yearCardBox.Text);
-            int cvcLenght = cvcBox.Text.Length;
-
             if (nameBox.Text != null && runnerBox.SelectedItem != null
                 && nameCardBox.Text != null && numberCardBox.Text != null
-                && monthCard.ToString() != null && yearCard.ToString() != null
+                && monthCardBox.Text != null && yearCardBox.Text != null
                 && cvcBox.Text != null && charityBox.SelectedItem != null)
-            {                
+            {
+                int numberCardLenght = numberCardBox.Text.Length;
+                int monthCard = Convert.ToInt32(monthCardBox.Text);
+                int monthCardLenght = monthCardBox.Text.Length;
+                int yearCard = Convert.ToInt32(yearCardBox.Text);
+                int cvcLenght = cvcBox.Text.Length;
                 if (numberCardLenght == 16)
                 {
                     if ((monthCard <= 9 && monthCardLenght == 1) || monthCardLenght == 2)

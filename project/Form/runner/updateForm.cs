@@ -127,7 +127,7 @@ namespace project
         private void updateRunBut_Click(object sender, EventArgs e)
         {
             int count = 0;
-            if (passBox.Text != null || passBox.Text != "")
+            if (passBox.Text != "")
             {
                 if (passBox.Text.Length < 6) { MessageBox.Show("Длина пароля должны быть не меньше 6 символов."); return; }
                 if (!passBox.Text.Any(c => char.IsUpper(c))) { MessageBox.Show("В пароле нет заглавной буквы."); return; }
